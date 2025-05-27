@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace _20250515_DelegatesDemo
 {
-    //public delegate void NewIterationStarted(int iterationNumber);
-    public delegate void NewIterationStarted(object sender, IterationEventArgs args);
+    public static class Common
+    {
+        public static int Sqr(this int n)
+        { 
+            return n * n;
+        }
+    }
 }

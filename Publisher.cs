@@ -20,9 +20,9 @@ namespace _20250515_DelegatesDemo
 
         //public void Subscribe(NewIterationStarted handler)
         //{
-        //    //_iterationStarted += handler;    // додавання обробника в ланцюжок викликів
+        //    _iterationStarted += handler;    // додавання обробника в ланцюжок викликів
 
-        //    _iterationStarted = (NewIterationStarted)Delegate.Combine(_iterationStarted, handler);
+        //    //_iterationStarted = (NewIterationStarted)Delegate.Combine(_iterationStarted, handler);
         //}
 
         //public void UnSubscribe(NewIterationStarted handler)
@@ -58,7 +58,7 @@ namespace _20250515_DelegatesDemo
             {
                 if (_iterationStarted != null)
                 {
-                    _iterationStarted(i);    // Call callback functions
+                    _iterationStarted(this, new IterationEventArgs(i));    // Call callback functions
                 }
 
                 Console.WriteLine($"iteration: {i}");
